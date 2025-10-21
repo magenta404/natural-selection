@@ -54,7 +54,7 @@ function _natural_selection --description 'Input wrapper to improve selection'
   if test $input_function = "select-all"
     # We do this instead of calling _natural_selection_begin_selection so the cursor is swapped correctly
     set --global _natural_selection_selection_start 0
-    commandline --function beginning-of-line begin-selection end-of-line
+    commandline --function beginning-of-buffer begin-selection end-of-buffer
   else if test $input_function = "copy-to-clipboard"
     # Do not copy empty selection. Allows application native copy to work.
     if _natural_selection_is_selecting
